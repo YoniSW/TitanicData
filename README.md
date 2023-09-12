@@ -45,3 +45,4 @@ TODO: Add an example of how to use the web service
 ```csharp
 docker-compose up
 ```
+![Settings Window]([http://full/path/to/img.jpg](https://github.com/YoniSW/TitanicData/blob/main/images/AllPassengerData.png)https://github.com/YoniSW/TitanicData/blob/main/images/AllPassengerData.png "Optional title")
