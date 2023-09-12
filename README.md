@@ -19,7 +19,7 @@ git clone https://github.com/YoniSW/TitanicData.git
 
 2. Set the PROJECT_DIR environment variable to the project directory path.
 ```bash
-cd TitanicPassengerDataService
+cd TitanicData
 export PROJECT_DIR=$PWD
 ```
 
