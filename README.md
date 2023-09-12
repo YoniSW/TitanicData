@@ -8,9 +8,10 @@ Yoni Zadik
 The Titanic Passenger Data Web Service is a tool designed to facilitate the loading of raw Titanic passenger data into a PostgreSQL database and provide user-specific details upon request. This service allows users to interact with the Titanic dataset, retrieve information, and perform various data operations.
 
 ## Basic requirements
-1) Docker daemon
-2) Helm
-3) Minikube
+1) docker-compose
+2) docker deamon
+3) Helm
+4) Minikube
 
 ## User Instructions
 
@@ -51,17 +52,27 @@ docker-compose up
 ![Alt Text](images/RunningContainers.png)
 
 
+**API end-points**
+1. **GET /v1/passengers**
+![Alt Text](images/AllPassengers.png)
 
-**Debugging the code is easier with flask_restx.**
+2. **GET /v1/passengers/<int:passenger_id>**
+![Alt Text](images/AllPassengerData.png)
 
-![Alt Text](images/UseRestXToDebug.png)
+3. **POST /v1/passengers/<int:passenger_id>**
+![Alt Text](images/AttributesList.png)
 
+4. **GET /v1/fare-histogram**
+![Alt Text](images/histogram.png)
 
-**Swagger is avialable: http://localhost:5000/swagger**
-Use it to see rest of examples.
-
+**Swagger will be avialable under: http://localhost:5000/swagger**
+Use it to check and test REST API.
 ![Alt Text](images/Swagger.png)
 
+## Testing
+1) Unit tests.
+2) Bad data is easier detect with flask_restx:
+![Alt Text](images/UseRestXToDebug.png)
 
 ## TODO
 1) Helm & Minikube was partly deployed.
