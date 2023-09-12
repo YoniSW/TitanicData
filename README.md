@@ -38,11 +38,21 @@ Titanic Passenger Data Web Service will be running on http://127.0.0.1:5000 (htt
 You can now access and use the Titanic Passenger Data Web Service by making HTTP requests to the appropriate endpoints. Be sure to refer to the documentation for details on available endpoints and how to interact with the service.
 ## Usage example
 
-```python
-TODO: Add an example of how to use the web service
-```
-
-```csharp
+```bash
+docker-compose build
 docker-compose up
 ```
-![Settings Window]([http://full/path/to/img.jpg](https://github.com/YoniSW/TitanicData/blob/main/images/AllPassengerData.png)https://github.com/YoniSW/TitanicData/blob/main/images/AllPassengerData.png "Optional title")
+Services are up and running.
+![Alt Text](images/RunningContainers.png)
+
+
+```bash
+Debugging the code is easier with flask_restx.
+```
+![Alt Text](images/UseRestXToDebug.png)
+
+```bash
+Swagger is avialable: http://localhost:5000/swagger
+Use it to see rest of examples.
+```
+![Alt Text](images/Swagger.png)
