@@ -56,3 +56,10 @@ docker-compose up
 Use it to see rest of examples.
 
 ![Alt Text](images/Swagger.png)
+
+
+## TODO
+1) Helm & Minikube was partly deployed.
+![Alt Text](images/HelmDeploy.png)
+
+2) Add more tests.
