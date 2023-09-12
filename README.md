@@ -7,6 +7,11 @@ Yoni Zadik
 
 The Titanic Passenger Data Web Service is a tool designed to facilitate the loading of raw Titanic passenger data into a PostgreSQL database and provide user-specific details upon request. This service allows users to interact with the Titanic dataset, retrieve information, and perform various data operations.
 
+## Basic requirements
+1) Docker daemon
+2) Helm
+3) Minikube
+
 ## User Instructions
 
 To use the Titanic Passenger Data Web Service on a **Linux** system, follow these steps:
