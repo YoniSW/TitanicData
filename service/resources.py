@@ -1,33 +1,19 @@
 import jsonify
 from flask import jsonify, send_file
-from flask_restx import Resource, reqparse, Namespace, fields
+from flask_restx import Resource, reqparse, Namespace
 from io import BytesIO
 import matplotlib.pyplot as plt
-from loguru import logger
 import numpy as np
 
 from database import fetch_passengers, fetch_passenger_by_id
+from models import build_passenger_model
 
 # Request parser for filtering attributes
 parser = reqparse.RequestParser()
 parser.add_argument('attributes', type=str, help='Comma-separated list of attributes to include')
-api = Namespace('passenger', description='Passenger related operations')
-
-# Passenger model for Swagger documentation
-passenger_model = api.model('Passenger', {
-    'passengerid': fields.Integer,
-    'survived': fields.Integer,
-    'pclass': fields.Integer,
-    'name': fields.String,
-    'sex': fields.String,
-    'age': fields.Float,
-    'sibsp': fields.Integer,
-    'parch': fields.Integer,
-    'ticket': fields.String,
-    'fare': fields.Float,
-    'cabin': fields.String,
-    'embarked': fields.String,
-})
+api = Namespace('Passenger', description='Passenger related operations')
+build_passenger_model(api)
+passenger_model = api.models.get('Passenger')
 
 
 class FarePercentileHistogramResource(Resource):
