@@ -42,17 +42,17 @@ You can now access and use the Titanic Passenger Data Web Service by making HTTP
 docker-compose build
 docker-compose up
 ```
-Services are up and running.
+**Services are up and running.**
 ![Alt Text](images/RunningContainers.png)
 
 
-```bash
-Debugging the code is easier with flask_restx.
-```
+
+**Debugging the code is easier with flask_restx.**
+
 ![Alt Text](images/UseRestXToDebug.png)
 
-```bash
-Swagger is avialable: http://localhost:5000/swagger
+
+**Swagger is avialable: http://localhost:5000/swagger**
 Use it to see rest of examples.
-```
+
 ![Alt Text](images/Swagger.png)
