@@ -1,0 +1,4 @@
+apiVersion: v2
+name: data-loader-chart
+description: A Helm chart for the data-loader service
+version: 1.0.0

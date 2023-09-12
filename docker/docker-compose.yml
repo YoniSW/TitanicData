@@ -1,0 +1,38 @@
+version: '3'
+
+services:
+  database:
+    build: ./database
+    environment:
+      POSTGRES_PASSWORD: TitanicBmc!
+    ports: # container:host mapping
+      - "5432:5432"
+    volumes:
+      - ./app:/app
+    
+
+  data_loader:
+    build: ./data_loader
+    environment:
+      POSTGRES_PASSWORD: TitanicBmc!
+      IS_CONTAINER: 'True'
+    volumes:
+      - ./app:/app
+      - ${PROJECT_DIR}/data:/data
+    depends_on:
+      - database
+
+
+  backend:
+    build: ./backend
+    environment:
+      POSTGRES_PASSWORD: TitanicBmc!
+      IS_CONTAINER: 'True'
+    ports: # container:host mapping
+      - "5000:5000"
+    volumes:
+      - ./app:/app
+      - ${PROJECT_DIR}/service:/service
+      - ${PROJECT_DIR}/data:/data
+    depends_on:
+      - data_loader

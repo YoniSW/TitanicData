@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "database-chart.fullname" . }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      {{- toYaml .Values.myLabels | nindent 6 }}
+  template:
+    metadata:
+      labels: {{ .Values.myLabels | toYaml | nindent 8 }}
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          env:
+            - name: POSTGRES_PASSWORD
+              value: {{ .Values.environment.POSTGRES_PASSWORD }}
+          ports:
+            - containerPort: 5432
