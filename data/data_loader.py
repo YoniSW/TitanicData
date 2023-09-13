@@ -10,7 +10,7 @@ db_params = {
     'dbname': c.DB_NAME,
     'user': c.DB_NAME,
     'password': c.PSWD,
-    'host': c.HOST,  # If running on the same machine
+    'host': c.HOST,
     'port': '5432', # used by the PostgreSQL DB server
     'sslmode': 'disable'
 }
